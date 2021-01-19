@@ -30,4 +30,8 @@ public class SaveAuthorRequest {
 		
 		return new Author(name, email, description);
 	}
+
+	public String getEmail() {
+		return email;
+	}
 }

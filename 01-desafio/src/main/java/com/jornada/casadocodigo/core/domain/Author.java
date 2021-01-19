@@ -32,6 +32,8 @@ public class Author {
 	
 	private LocalDateTime created = LocalDateTime.now();
 
+	public Author() {}
+	
 	public Author(String name, String email, String description) {
 		this.name = name;
 		this.email = email;
