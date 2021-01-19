@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.util.UriComponentsBuilder;
 
 import com.jornada.casadocodigo.core.domain.AuthorRepository;
 import com.jornada.casadocodigo.delivery.request.SaveAuthorRequest;
@@ -16,22 +15,23 @@ import com.jornada.casadocodigo.delivery.request.SaveAuthorRequest;
 @RestController
 @RequestMapping("/authors")
 public class AuthorController {
-
+	
 	private AuthorRepository authorRepository;
 	
+	//1
 	public AuthorController(AuthorRepository authorRepository){
 		this.authorRepository = authorRepository;
 	}
 	
+	//2
 	@Transactional
 	@PostMapping
-	public ResponseEntity<?> save(@Valid @RequestBody SaveAuthorRequest request, UriComponentsBuilder b) {
+	public ResponseEntity<String> save(@Valid @RequestBody SaveAuthorRequest request) {
 		
 		var author = request.toModel();
 		
 		this.authorRepository.save(author);
 				
-		return ResponseEntity.created(b.path("/authors/{id}").buildAndExpand(author.getId()).toUri())
-							 .build();
+		return ResponseEntity.ok(author.toString());
 	}
 }

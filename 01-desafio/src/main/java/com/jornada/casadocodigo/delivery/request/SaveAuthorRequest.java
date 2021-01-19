@@ -8,14 +8,14 @@ import com.jornada.casadocodigo.core.domain.Author;
 
 public class SaveAuthorRequest {
 
-	@NotEmpty(message="Nome esta vazio.")
+	@NotEmpty
 	private String name;
 	
-	@Email(message="E-Mail invalido.")
-	@NotEmpty(message="E-Mail esta vazia.")
+	@Email
+	@NotEmpty
 	private String email;
 	
-	@NotEmpty(message="Descrição esta vazia.") 
+	@NotEmpty 
 	@Size(max=400, message="Descrição maior que {max}")
 	private String description;
 

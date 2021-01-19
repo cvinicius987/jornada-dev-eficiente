@@ -33,7 +33,6 @@ public class Author {
 	private LocalDateTime created = LocalDateTime.now();
 
 	public Author(String name, String email, String description) {
-		super();
 		this.name = name;
 		this.email = email;
 		this.description = description;
