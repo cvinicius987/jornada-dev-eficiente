@@ -4,7 +4,7 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
-import com.jornada.casadocodigo.core.domain.Author;
+import com.jornada.casadocodigo.core.domain.author.Author;
 
 public class SaveAuthorRequest {
 

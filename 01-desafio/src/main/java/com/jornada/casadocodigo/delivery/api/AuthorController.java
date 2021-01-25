@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.jornada.casadocodigo.core.domain.AuthorRepository;
+import com.jornada.casadocodigo.core.domain.author.AuthorRepository;
 import com.jornada.casadocodigo.delivery.request.SaveAuthorRequest;
 import com.jornada.casadocodigo.delivery.validator.EmailValidator;
 

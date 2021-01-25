@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
-import com.jornada.casadocodigo.core.domain.AuthorRepository;
+import com.jornada.casadocodigo.core.domain.author.AuthorRepository;
 import com.jornada.casadocodigo.delivery.request.SaveAuthorRequest;
 
 @Component

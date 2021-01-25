@@ -1,4 +1,4 @@
-package com.jornada.casadocodigo.core.domain;
+package com.jornada.casadocodigo.core.domain.author;
 
 import java.util.Optional;
 
