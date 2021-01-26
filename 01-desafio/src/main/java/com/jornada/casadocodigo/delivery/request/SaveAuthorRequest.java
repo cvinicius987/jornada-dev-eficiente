@@ -5,12 +5,14 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
 import com.jornada.casadocodigo.core.domain.author.Author;
+import com.jornada.casadocodigo.delivery.validator.custom.NotRepeatValue;
 
 public class SaveAuthorRequest {
 
 	@NotEmpty
 	private String name;
 	
+	@NotRepeatValue(entityClass = Author.class, fieldName = "email")
 	@Email
 	@NotEmpty
 	private String email;

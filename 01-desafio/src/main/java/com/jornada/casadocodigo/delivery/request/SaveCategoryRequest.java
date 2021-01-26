@@ -3,9 +3,11 @@ package com.jornada.casadocodigo.delivery.request;
 import javax.validation.constraints.NotEmpty;
 
 import com.jornada.casadocodigo.core.domain.category.Category;
+import com.jornada.casadocodigo.delivery.validator.custom.NotRepeatValue;
 
 public class SaveCategoryRequest {
 
+	@NotRepeatValue(entityClass = Category.class, fieldName = "name")
 	@NotEmpty
 	private String name;
 
