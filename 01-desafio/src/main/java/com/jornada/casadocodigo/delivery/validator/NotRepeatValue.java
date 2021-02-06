@@ -1,4 +1,4 @@
-package com.jornada.casadocodigo.delivery.validator.custom;
+package com.jornada.casadocodigo.delivery.validator;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;

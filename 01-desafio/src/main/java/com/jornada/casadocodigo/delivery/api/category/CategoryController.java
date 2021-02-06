@@ -1,5 +1,6 @@
-package com.jornada.casadocodigo.delivery.api;
+package com.jornada.casadocodigo.delivery.api.category;
 
+import javax.persistence.EntityManager;
 import javax.validation.Valid;
 
 import org.springframework.http.ResponseEntity;
@@ -9,18 +10,15 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.jornada.casadocodigo.core.domain.category.CategoryRepository;
-import com.jornada.casadocodigo.delivery.request.SaveCategoryRequest;
-
 @RestController
 @RequestMapping("/categorys")
 public class CategoryController {
 	
-	private CategoryRepository categoryRepository;
+	private EntityManager entityManager;
 			
 	//1
-	public CategoryController(CategoryRepository categoryRepository){
-		this.categoryRepository = categoryRepository;
+	public CategoryController(EntityManager entityManager){
+		this.entityManager = entityManager;
 	}
 		
 	//2
@@ -30,7 +28,7 @@ public class CategoryController {
 		
 		var category = request.toModel();
 		
-		this.categoryRepository.save(category);
+		this.entityManager.persist(category);
 				
 		return ResponseEntity.ok(category.toString());
 	}

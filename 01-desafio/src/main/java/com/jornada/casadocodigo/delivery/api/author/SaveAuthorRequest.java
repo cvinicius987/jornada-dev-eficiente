@@ -1,11 +1,11 @@
-package com.jornada.casadocodigo.delivery.request;
+package com.jornada.casadocodigo.delivery.api.author;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
 import com.jornada.casadocodigo.core.domain.author.Author;
-import com.jornada.casadocodigo.delivery.validator.custom.NotRepeatValue;
+import com.jornada.casadocodigo.delivery.validator.NotRepeatValue;
 
 public class SaveAuthorRequest {
 

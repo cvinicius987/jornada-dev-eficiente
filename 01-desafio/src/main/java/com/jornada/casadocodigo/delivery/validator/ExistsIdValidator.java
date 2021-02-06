@@ -1,11 +1,11 @@
-package com.jornada.casadocodigo.delivery.validator.custom;
+package com.jornada.casadocodigo.delivery.validator;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-public class NotRepeatValidator implements ConstraintValidator<NotRepeatValue, Object> {
+public class ExistsIdValidator implements ConstraintValidator<ExistsIdValue, Object> {
 	
 	private String fieldName;
 	private Class<?> entityClass;
@@ -13,14 +13,14 @@ public class NotRepeatValidator implements ConstraintValidator<NotRepeatValue, O
 	@PersistenceContext
 	private EntityManager manager;
 		
-	public NotRepeatValidator() {}
+	public ExistsIdValidator() {}
 	
-	public NotRepeatValidator(EntityManager manager) {
+	public ExistsIdValidator(EntityManager manager) {
 		this.manager = manager;
 	}
 	
 	@Override
-	public void initialize(NotRepeatValue constraintAnnotation) {
+	public void initialize(ExistsIdValue constraintAnnotation) {
 		this.entityClass = constraintAnnotation.entityClass();
 		this.fieldName   = constraintAnnotation.fieldName();
 	}
@@ -32,17 +32,14 @@ public class NotRepeatValidator implements ConstraintValidator<NotRepeatValue, O
 		if(value != null) {
 			
 			//2
-			var query = manager.createQuery(String.format("SELECT 1 FROM %s WHERE %s = :value", entityClass.getSimpleName(), fieldName));
+			var query = manager.createQuery(String.format("SELECT case when (count(*) > 0)  then true else false end FROM %s WHERE %s = :value", entityClass.getSimpleName(), fieldName), Boolean.class);
 			
 			query.setParameter("value", value);
 			
-			var result = query.getResultList();
-			
-			//3
-			return result.size() > 0 ? false : true;
+			return query.getSingleResult();
 		}
 		
-		//4
-		return true;
+		//3
+		return false;
 	}
 }

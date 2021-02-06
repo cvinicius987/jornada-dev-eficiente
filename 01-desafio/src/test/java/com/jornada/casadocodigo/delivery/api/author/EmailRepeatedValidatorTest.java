@@ -1,4 +1,4 @@
-package com.jornada.casadocodigo.delivery.validator.custom;
+package com.jornada.casadocodigo.delivery.api.author;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -15,7 +15,8 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
-import com.jornada.casadocodigo.delivery.request.SaveAuthorRequest;
+import com.jornada.casadocodigo.delivery.validator.NotRepeatValidator;
+import com.jornada.casadocodigo.delivery.validator.NotRepeatValue;
 
 public class EmailRepeatedValidatorTest {
 

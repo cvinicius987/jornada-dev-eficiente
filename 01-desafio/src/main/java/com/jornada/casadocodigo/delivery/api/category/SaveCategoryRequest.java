@@ -1,9 +1,9 @@
-package com.jornada.casadocodigo.delivery.request;
+package com.jornada.casadocodigo.delivery.api.category;
 
 import javax.validation.constraints.NotEmpty;
 
 import com.jornada.casadocodigo.core.domain.category.Category;
-import com.jornada.casadocodigo.delivery.validator.custom.NotRepeatValue;
+import com.jornada.casadocodigo.delivery.validator.NotRepeatValue;
 
 public class SaveCategoryRequest {
 

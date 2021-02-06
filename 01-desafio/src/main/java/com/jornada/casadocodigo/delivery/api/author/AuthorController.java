@@ -1,5 +1,6 @@
-package com.jornada.casadocodigo.delivery.api;
+package com.jornada.casadocodigo.delivery.api.author;
 
+import javax.persistence.EntityManager;
 import javax.validation.Valid;
 
 import org.springframework.http.ResponseEntity;
@@ -9,18 +10,15 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.jornada.casadocodigo.core.domain.author.AuthorRepository;
-import com.jornada.casadocodigo.delivery.request.SaveAuthorRequest;
-
 @RestController
 @RequestMapping("/authors")
 public class AuthorController {
 	
-	private AuthorRepository authorRepository;
+	private EntityManager entityManager;
 			
 	//1
-	public AuthorController(AuthorRepository authorRepository){
-		this.authorRepository = authorRepository;
+	public AuthorController(EntityManager entityManager){
+		this.entityManager = entityManager;
 	}
 	
 	//2
@@ -30,7 +28,7 @@ public class AuthorController {
 		
 		var author = request.toModel();
 		
-		this.authorRepository.save(author);
+		this.entityManager.persist(author);
 				
 		return ResponseEntity.ok(author.toString());
 	}
