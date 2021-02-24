@@ -1,18 +1,28 @@
- * Desafio Casa do Código
- 
- * Necessidades
- 
-- É necessário cadastrar um novo autor no sistema. 
-- Todo autor tem um nome, email e uma descrição. 
-- Também queremos saber o instante exato que ele foi registrado.
+# Jornada Dev Eficiente 
 
- * Restrições
- 
- - O instante não pode ser nulo
- - O email é obrigatório
- - O email tem que ter formato válido
- - O nome é obrigatório
- - A descrição é obrigatória e não pode passar de 400 caracteres
- - resultado esperado
- - Um novo autor criado e status 200 retornado 
- - O email do autor precisa ser único no sistema
+## Projeto 1
+### Desafio Casa do Código
+
+Implementação de algumas funcionalidades da Casa do Código, utilizado CDD, onde a funcionalidade deve ser entregue da forma mais simples possivel.
+
+## Tech
+
+- [Java] 
+- [Spring Boot]
+- [Maven]
+
+## Instalação
+
+#### Geração artefato 
+
+```sh
+mvn clean install
+ou
+./mvnw clean install
+```
+
+#### Execução
+
+```sh
+./mvnw spring-boot:run
+```

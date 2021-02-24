@@ -31,8 +31,12 @@ public class NotRepeatValidator implements ConstraintValidator<NotRepeatValue, O
 		//1
 		if(value != null) {
 			
+			var queryStr = String.format("SELECT 1 FROM %s WHERE %s = :value", entityClass.getSimpleName(), fieldName);
+			
+			System.out.println(queryStr);
+			
 			//2
-			var query = manager.createQuery(String.format("SELECT 1 FROM %s WHERE %s = :value", entityClass.getSimpleName(), fieldName));
+			var query = manager.createQuery(queryStr);
 			
 			query.setParameter("value", value);
 			

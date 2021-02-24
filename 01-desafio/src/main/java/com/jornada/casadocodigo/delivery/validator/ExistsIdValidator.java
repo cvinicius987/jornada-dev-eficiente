@@ -31,9 +31,13 @@ public class ExistsIdValidator implements ConstraintValidator<ExistsIdValue, Obj
 		//1
 		if(value != null) {
 			
-			//2
-			var query = manager.createQuery(String.format("SELECT case when (count(*) > 0)  then true else false end FROM %s WHERE %s = :value", entityClass.getSimpleName(), fieldName), Boolean.class);
+			var queryStr = String.format("SELECT case when (count(*) > 0)  then true else false end FROM %s WHERE %s = :value", entityClass.getSimpleName(), fieldName);
 			
+			//2
+			var query = manager.createQuery(queryStr, Boolean.class);
+			
+			
+			System.out.println(queryStr);
 			query.setParameter("value", value);
 			
 			return query.getSingleResult();

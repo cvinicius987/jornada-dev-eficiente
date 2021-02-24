@@ -1,4 +1,4 @@
-package com.jornada.casadocodigo.delivery.api.book;
+package com.jornada.casadocodigo.delivery.api.book.response;
 
 public final class ListBookResponse {
 
