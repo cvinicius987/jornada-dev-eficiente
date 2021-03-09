@@ -15,6 +15,7 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
+import com.jornada.casadocodigo.delivery.api.author.request.SaveAuthorRequest;
 import com.jornada.casadocodigo.delivery.validator.NotRepeatValidator;
 import com.jornada.casadocodigo.delivery.validator.NotRepeatValue;
 

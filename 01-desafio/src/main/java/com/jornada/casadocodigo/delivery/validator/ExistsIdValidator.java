@@ -36,8 +36,6 @@ public class ExistsIdValidator implements ConstraintValidator<ExistsIdValue, Obj
 			//2
 			var query = manager.createQuery(queryStr, Boolean.class);
 			
-			
-			System.out.println(queryStr);
 			query.setParameter("value", value);
 			
 			return query.getSingleResult();

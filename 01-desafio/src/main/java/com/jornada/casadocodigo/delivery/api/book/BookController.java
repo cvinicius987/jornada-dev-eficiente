@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.jornada.casadocodigo.core.domain.book.Book;
+import com.jornada.casadocodigo.delivery.api.book.request.SaveBookRequest;
 import com.jornada.casadocodigo.delivery.api.book.response.ListBookResponse;
 import com.jornada.casadocodigo.delivery.api.book.response.ViewBookResponse;
 

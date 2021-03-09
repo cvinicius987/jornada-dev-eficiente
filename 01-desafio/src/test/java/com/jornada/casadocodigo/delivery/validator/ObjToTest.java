@@ -4,8 +4,6 @@ import javax.persistence.Entity;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
-import com.jornada.casadocodigo.core.domain.category.Category;
-
 @Entity
 class ObjToTest {
 	

@@ -5,6 +5,10 @@
 
 Implementação de algumas funcionalidades da Casa do Código, utilizado CDD, onde a funcionalidade deve ser entregue da forma mais simples possivel.
 
+## Arquitetura
+
+Neste projeto não será utilizado nenhum modelo de arquitetura (Clean Arch, Hexagonal, Onion), a proposta é desenvolver as funcionalidades propostas da forma mais direta possivel.
+
 ## Tech
 
 - [Java] 

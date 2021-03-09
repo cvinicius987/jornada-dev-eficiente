@@ -2,8 +2,6 @@ package com.jornada.casadocodigo.delivery.validator;
 
 import static org.junit.jupiter.api.Assertions.assertFalse;
 
-import java.util.List;
-
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 import javax.validation.ConstraintValidatorContext;

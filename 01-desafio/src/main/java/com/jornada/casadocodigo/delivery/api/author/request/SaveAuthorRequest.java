@@ -1,4 +1,4 @@
-package com.jornada.casadocodigo.delivery.api.author;
+package com.jornada.casadocodigo.delivery.api.author.request;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;

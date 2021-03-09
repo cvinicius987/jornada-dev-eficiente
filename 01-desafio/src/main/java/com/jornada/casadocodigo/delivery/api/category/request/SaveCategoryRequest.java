@@ -1,4 +1,4 @@
-package com.jornada.casadocodigo.delivery.api.category;
+package com.jornada.casadocodigo.delivery.api.category.request;
 
 import javax.validation.constraints.NotEmpty;
 
